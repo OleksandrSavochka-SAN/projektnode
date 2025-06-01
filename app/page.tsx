@@ -1,103 +1,303 @@
-import Image from "next/image";
+import Head from 'next/head';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* --- <Head> odpowiada za meta, tytuł i favicon. --- */}
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="/soccer-ball-icon.png" />
+        <title>Portal sportowy</title>
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      {/* ---  --- */}
+      <div className="scroll-container">
+        <header>
+          <div className="container">
+            <div className="header__content">
+              <div className="header__info">
+                <img
+                  src="/soccer-ball-icon.png"
+                  alt="Logo"
+                  className="header__logo"
+                />
+                <h1 className="header__title">Portal sportowy</h1>
+              </div>
+              <nav className="header__nav">
+                <ul>
+                  <li>
+                    <a href="#">Główna</a>
+                  </li>
+                  <li>
+                    <a href="#">Aktualności</a>
+                  </li>
+                  <li>
+                    <a href="#">Mecze</a>
+                  </li>
+                  <li>
+                    <a href="#">Kontakt</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <main>
+          <div className="container">
+            <div className="content">
+              {/* Lewa kolumna */}
+              <div className="content__left">
+                {/* Mecz Ligi Mistrzów */}
+                <article>
+                  <div className="article__header">
+                    <span className="article__date">
+                      Opublikowano: 09 kwietnia 2025, 12:00
+                    </span>
+                    <h2 className="article__title">
+                      Historyczne zwycięstwo Arsenalu nad Realem Madryt 3:0 w
+                      Lidze Mistrzów
+                    </h2>
+                  </div>
+                  <section className="article__image">
+                    <img
+                      src="/img/photo_4.jpeg"
+                      alt="Mecz piłkarski"
+                      className="image"
+                    />
+                  </section>
+                  <section className="article__text">
+                    <p>
+                      W dniu 8 kwietnia 2025, podczas emocjonującego meczu Ligi
+                      Mistrzów, Arsenal odniósł spektakularne zwycięstwo nad
+                      Realem Madryt, wygrywając 3:0. Od pierwszych minut
+                      spotkania drużyna Arsenalu prezentowała wysoką
+                      intensywność gry i doskonałą koordynację, co skutkowało
+                      szybkim przejęciem inicjatywy.
+                    </p>
+                  </section>
+                </article>
+
+                {/* Rzuty karne Rice'a */}
+                <article>
+                  <div className="article__header">
+                    <h2 className="article__title">
+                      Rzuty karne Rice'a przyniosły zwycięstwo Arsenalowi
+                    </h2>
+                  </div>
+                  <section className="article__image">
+                    <img
+                      src="/img/photo_1.avif"
+                      alt="Mecz piłkarski"
+                      className="image"
+                    />
+                  </section>
+                  <section className="article__text">
+                    <p>
+                      Gospodarze rozpoczęli bardzo aktywnie, podczas gdy Real
+                      Madryt był zmuszony do kontrataków w początkowym okresie.
+                      Pierwszy poważny moment nastąpił w 13. minucie, gdy Raul
+                      Asensio zablokował strzał Declana Rice'a, a następnie
+                      Thibaut Courtois sparował niski strzał Thomasa Parteya.
+                    </p>
+                    <p>
+                      Stopniowo tempo stało się jeszcze wyższe i obaj bramkarze
+                      musieli się mocno napracować. W 31 minucie David Raya
+                      uratował gospodarzy po tym, jak strzał Kyliana Mbappe
+                      został uratowany przez penetrujące podanie Jude'a
+                      Bellinghama.
+                    </p>
+                    <p>
+                      Bukayo Saka oddał dwa świetne strzały z prawej flanki, ale
+                      żaden z graczy Arsenalu nie zdążył ich obronić, a
+                      następnie Courtois dwukrotnie wybronił uderzenie Rice'a w
+                      drugiej połowie i dośrodkowanie Gabriela Martinelliego.
+                    </p>
+                    <p>
+                      Obaj bramkarze wykazali się dużymi umiejętnościami, a
+                      bramka mogła być tylko wynikiem czegoś wyjątkowego. Rice
+                      uderzył z rzutu wolnego w 58 minucie, posyłając piłkę
+                      równo z poprzeczką.
+                    </p>
+                    <p>
+                      Po objęciu prowadzenia Arsenal nadal szukał szczęścia w
+                      ataku. Piłkarze Realu w krótkim odstępie czasu zablokowali
+                      cztery strzały, dwukrotnie wyjmując piłkę z siatki.
+                      Jednak w 70 minucie The Gunners wywalczyli kolejny rzut
+                      wolny, a Rice uderzył być może jeszcze bardziej
+                      spektakularnie.
+                    </p>
+                    <p>
+                      Trybuny skandowały „więcej standardów, ole ole”, ale
+                      Arsenal zdobył trzecią bramkę z gry. W 75 minucie Myles
+                      Lewis-Skelly oddał strzał z lewej flanki na skraj pola
+                      karnego, a Mikel Merino skierował piłkę w prawy róg
+                      bramki Courtoisa.
+                    </p>
+                  </section>
+                </article>
+
+                {/* Zawodnik meczu */}
+                <article>
+                  <div className="article__header">
+                    <h2 className="article__title">
+                      Zawodnik meczu PlayStation®: Declan Rice (Arsenal)
+                    </h2>
+                  </div>
+                  <section className="article__image">
+                    <img
+                      src="/img/photo_3.webp"
+                      alt="Mecz piłkarski"
+                      className="image"
+                    />
+                  </section>
+                  <section className="article__text">
+                    <p>
+                      "Pomocnik rozegrał świetny mecz. Dwa razy fantastycznie
+                      strzelił z rzutów wolnych w momencie, gdy było to
+                      najbardziej potrzebne. Jego siła i wytrzymałość pomogły
+                      Arsenalowi w drugiej połowie. Rice świetnie poruszał się
+                      między liniami i dobrze współpracował z Martinellim na
+                      lewej stronie, w pełni zasługując na tę nagrodę!".
+                      Obserwatorzy techniczni UEFA.
+                    </p>
+                  </section>
+                </article>
+
+                {/* Opinie kibiców */}
+                <section className="reviews">
+                  <h2>Opinie kibiców</h2>
+                  <div className="review__item">
+                    <p>
+                      <strong>Adam:</strong> Świetna strona, zawsze czytam
+                      tutaj najnowsze wiadomości! Bardzo przyjazny interfejs.
+                    </p>
+                  </div>
+                  <div className="review__item">
+                    <p>
+                      <strong>Mateusz:</strong> Świetne podejście! Artykuły są
+                      interesujące, zwłaszcza analizy meczów.
+                    </p>
+                  </div>
+                  <div className="review__item">
+                    <p>
+                      <strong>Mariusz:</strong> Uwielbiam ten portal! Zawsze
+                      szybko i rzetelnie – idealne źródło informacji dla fana
+                      piłki nożnej.
+                    </p>
+                  </div>
+                </section>
+              </div>
+
+              {/* Prawa kolumna */}
+              <aside className="content__right">
+                <div className="aside__header">
+                  <h3>Najnowsze wiadomości</h3>
+                </div>
+                <section className="aside__news">
+                  <div className="news__item">
+                    <h4>Nowe treningi reprezentacji</h4>
+                    <p>
+                      Przygotowania do mistrzostw świata – najświeższe
+                      szczegóły procesu treningowego.
+                    </p>
+                  </div>
+                  <div className="news__item">
+                    <h4>Rekord sezonu</h4>
+                    <p>Ustanowiono nowy rekord zdobytych goli w jednym meczu.</p>
+                  </div>
+                  <div className="news__item">
+                    <h4>Przegląd Turnieju Mistrzów</h4>
+                    <p>Szczegóły ostatnich meczów oraz analiza ekspertów.</p>
+                  </div>
+                  <div className="news__item">
+                    <h4>Nowe transfery</h4>
+                    <p>
+                      Kluby europejskie potwierdzają zainteresowanie czołowymi
+                      zawodnikami.
+                    </p>
+                  </div>
+                  <div className="news__item">
+                    <h4>Debiut nowego trenera</h4>
+                    <p>
+                      Znany trener objął stery młodej drużyny z ogromnymi
+                      ambicjami.
+                    </p>
+                  </div>
+                  <div className="news__item">
+                    <h4>Analiza ekspercka</h4>
+                    <p>
+                      Specjaliści omawiają taktykę i kluczowe decyzje
+                      sędziowskie ostatnich spotkań.
+                    </p>
+                  </div>
+                </section>
+
+                {/* Rankingi */}
+                <section className="aside__ranking">
+                  <h3>Top 5 drużyn – Liga Mistrzów</h3>
+                  <ol>
+                    <li>Manchester City</li>
+                    <li>Bayern Monachium</li>
+                    <li>Arsenal</li>
+                    <li>Real Madryt</li>
+                    <li>Inter Mediolan</li>
+                  </ol>
+                </section>
+
+                {/* Polecane */}
+                <section className="aside__recommended">
+                  <h3>Polecane artykuły</h3>
+                  <ul>
+                    <li>
+                      <a href="#">
+                        Taktyczne podejście Guardioli – analiza
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">10 najbardziej pamiętnych meczów dekady</a>
+                    </li>
+                    <li>
+                      <a href="#">Kariera Mbappé – droga na szczyt</a>
+                    </li>
+                  </ul>
+                </section>
+              </aside>
+            </div>
+          </div>
+        </main>
+
+        <footer>
+          <div className="container">
+            <div className="footer__content">
+              <div className="footer__left">
+                <img
+                  src="/Sports-Football-3-icon.png"
+                  alt="Logo"
+                  className="footer__logo"
+                />
+                <p>
+                  Portal sportowy – Twoje źródło najnowszych wiadomości
+                  sportowych.
+                </p>
+              </div>
+              <div className="footer__center">
+                <div className="footer__social">
+                  <p>
+                    <a href="#">Facebook</a> | <a href="#">Twitter</a> |{' '}
+                    <a href="#">Instagram</a>
+                  </p>
+                </div>
+              </div>
+              <div className="footer__right">
+                <p>Projekt: HTML + CSS</p>
+                <p>Wybrane Środowiska Programowania 24/25</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
   );
 }
